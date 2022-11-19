@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Productos Descontinuados:</h2>
+            <hr />
+        </div>
+
+    </div>
+</div>
+<br />
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="../Scripts/SubCategoria/SubCategoriaCRUD.js"></script>
+
+<div class="container">
+
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <table id="SubCategorias" class="table table-hover" border="1">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">ProductID</th>
+                        <th class="text-center" scope="col">ProductName</th>
+                        <th class="text-center" scope="col">QuantityPerUnit</th>
+                        <th class="text-center" scope="col">UnitPrice</th>
+                        <th class="text-center" scope="col">UnitsInStock</th>
+                        <th class="text-center" scope="col">UnitsOnOrder</th>
+                        <th class="text-center" scope="col">ReorderLevel</th>
+                        <th class="text-center" scope="col">Discontinued</th>
+                        <th class="text-center" scope="col">SupplierID</th>
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+          
