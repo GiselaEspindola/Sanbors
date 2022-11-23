@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categories.cs" />
+    <Compile Include="OrderDetails.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="Customers.cs" />
     <Compile Include="Employees.cs" />

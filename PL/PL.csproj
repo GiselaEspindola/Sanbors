@@ -146,6 +146,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\SubCategoria\GetAll2.js" />
+    <Content Include="Scripts\SubCategoria\GetAll3.js" />
     <Content Include="Scripts\SubCategoria\SubCategoriaCRUD.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -173,6 +175,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Products\GetAll.cshtml" />
     <Content Include="Views\Products\GetAll2.cshtml" />
+    <Content Include="Views\Products\GetAll3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

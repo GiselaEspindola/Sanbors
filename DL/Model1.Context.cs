@@ -43,5 +43,14 @@ namespace DL
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ProductosCategorias_Result>("ProductosCategorias");
         }
+    
+        public virtual ObjectResult<Reporting_Result> Reporting(string orderDate)
+        {
+            var orderDateParameter = orderDate != null ?
+                new ObjectParameter("OrderDate", orderDate) :
+                new ObjectParameter("OrderDate", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporting_Result>("Reporting", orderDateParameter);
+        }
     }
 }

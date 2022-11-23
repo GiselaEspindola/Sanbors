@@ -18,6 +18,10 @@ namespace ML
         public short UnitsOnOrder { get; set; }
         public short ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
+        public ML.Orders Orders { get; set; }
         public List<object> Productos { get; set; }
+        public Customers Custumers { get; set; }
+        public OrderDetails OrderDetails { get; set; }
+        //public string OrderDate { get; set; }
     }
 }

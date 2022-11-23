@@ -1,0 +1,70 @@
+﻿@model ML.Orders
+@{
+    ViewBag.Title = "GetAll3";
+}
+
+<h2>GetAll3</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>REPORTE:</h2>
+            <hr />
+        </div>
+
+    </div>
+</div>
+<br />
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="../Scripts/SubCategoria/GetAll3.js"></script>
+
+<div class="container">
+
+    @*<div class="row">
+            <input type="text" id="uname" name="name" placeholder = "Fecha" >
+        </div>*@
+
+    <div class="align-content-center">
+
+        @using (Html.BeginForm("GetAll3", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.TextBoxFor(model => model.OrderDate, new { @class = "form-control", id = "txtOrderDate", placeholder = "Fecha" })
+                </div>
+
+                <div class="col-md-3">
+
+                    <input type="submit" value="Buscar"/>
+                </div>
+            </div>
+
+
+
+        }
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <table id="SubCategorias" class="table table-hover" border="1">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Año</th>
+                        <th class="text-center" scope="col">CompanyName</th>
+                        <th class="text-center" scope="col">OrderID</th>
+                        <th class="text-center" scope="col">Quantity</th>
+                        <th class="text-center" scope="col">ProductName</th>
+                        <th class="text-center" scope="col">City</th>
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

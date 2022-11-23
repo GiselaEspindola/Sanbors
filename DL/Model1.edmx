@@ -166,6 +166,9 @@
         </Association>
         <Function Name="ProductosCategorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ProductosDescontinuados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Reporting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderDate" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="NorthwindModelStoreContainer">
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
@@ -396,6 +399,9 @@
           </AssociationSet>
           <FunctionImport Name="ProductosDescontinuados" ReturnType="Collection(NorthwindModel.ProductosDescontinuados_Result)" />
           <FunctionImport Name="ProductosCategorias" ReturnType="Collection(NorthwindModel.ProductosCategorias_Result)" />
+          <FunctionImport Name="Reporting" ReturnType="Collection(NorthwindModel.Reporting_Result)">
+            <Parameter Name="OrderDate" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="ProductosDescontinuados_Result">
           <Property Type="Int32" Name="ProductID" Nullable="false" />
@@ -414,6 +420,15 @@
           <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
           <Property Type="Int32" Name="CategoryID" Nullable="false" />
           <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="Reporting_Result">
+          <Property Type="DateTime" Name="Fecha" Nullable="true" />
+          <Property Type="String" Name="NombreCompania" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Int16" Name="Quantity" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="SuppliersNombreCompania" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="15" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -549,6 +564,19 @@
                 <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Reporting" FunctionName="NorthwindModel.Store.Reporting">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.Reporting_Result">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="NombreCompania" ColumnName="NombreCompania" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SuppliersNombreCompania" ColumnName="SuppliersNombreCompania" />
+                <ScalarProperty Name="City" ColumnName="City" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

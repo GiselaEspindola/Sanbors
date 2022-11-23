@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BL;
+using ML;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,5 +37,32 @@ namespace PL.Controllers
 
             return Json(result.Objects, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult GetAll3()
+
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public JsonResult GetAll3(ML.Orders orders)
+
+        {
+            ML.Result result = BL.Products.GetAll3(orders);
+            return Json(result.Objects, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpGet]
+        public JsonResult Reporting(ML.Orders orders)
+
+        {
+
+            ML.Result result = BL.Products.GetAll3(orders);
+           
+            return Json(result.Objects, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

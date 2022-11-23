@@ -11,7 +11,7 @@ namespace ML
         public int OrderID { get; set; }
         public ML.Customers Customers { get; set; }
         public ML.Employees Employees { get; set; }
-        public DateTime OrderDate { get; set; }
+        public string OrderDate { get; set; }
         public DateTime RequiredDate { get; set; }
         public DateTime ShippedDate { get; set; }
         //public ML.ShipVia ShipVia { get; set; }
@@ -22,5 +22,8 @@ namespace ML
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
+
+        public ML.OrderDetails OrderDetails { get; set; }
+
     }
 }
